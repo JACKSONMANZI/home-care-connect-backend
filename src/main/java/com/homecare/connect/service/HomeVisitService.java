@@ -1,0 +1,55 @@
+package com.homecare.connect.service;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.homecare.connect.domain.HomeVisit;
+import com.homecare.connect.repository.HomeVisitRepository;
+
+@Service 
+public class HomeVisitService {
+    @Autowired 
+    private HomeVisitRepository homeVisitRepository;
+
+     public String createHomeVisit(HomeVisit homeVisit) {
+        homeVisitRepository.save(homeVisit);
+        return "Home visit saved successfully";
+    }
+
+    public List<HomeVisit> getAllHomeVisits() {
+        return homeVisitRepository.findAll();
+    }
+
+    public Optional<HomeVisit> getByIdHomeVisit(UUID id) {
+        return homeVisitRepository.findById(id);
+    }
+
+    public String updateHomeVisit(UUID id, HomeVisit homeVisit) {
+        Optional<HomeVisit> allReady = homeVisitRepository.findById(id);
+        if (allReady.isEmpty()) {
+            return "The home visit with that id does not exist";
+        }
+        HomeVisit toUpdate = allReady.get();
+        toUpdate.setVisitDate(homeVisit.getVisitDate());
+        toUpdate.setStatus(homeVisit.getStatus());
+        toUpdate.setCareType(homeVisit.getCareType());
+        toUpdate.setHours(homeVisit.getHours());
+        toUpdate.setCareRecipient(homeVisit.getCareRecipient());
+        toUpdate.setCaregiver(homeVisit.getCaregiver());
+        homeVisitRepository.save(toUpdate);
+        return "Home visit updated successfully";
+    }
+
+    public String deleteHomeVisit(UUID id) {
+        Optional<HomeVisit> allReady = homeVisitRepository.findById(id);
+        if (allReady.isEmpty()) {
+            return "The home visit with that id does not exist";
+        }
+        homeVisitRepository.deleteById(id);
+        return "Home visit deleted successfully";
+    }
+}
