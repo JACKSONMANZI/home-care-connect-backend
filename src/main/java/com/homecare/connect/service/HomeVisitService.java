@@ -57,10 +57,33 @@ public class HomeVisitService {
 
     public List<HomeVisit> getByStatus(VisitStatus status) {
     return homeVisitRepository.findByStatusOrderByVisitDateAsc(status);
-}
+    }
 
-public List<HomeVisit> getBetweenDates(LocalDate start, LocalDate end) {
+    public List<HomeVisit> getBetweenDates(LocalDate start, LocalDate end) {
     return homeVisitRepository.findByVisitDateBetweenOrderByVisitDateAsc(start, end);
-}
+    }
+    public String changeStatus(UUID id, VisitStatus newStatus) {
+    Optional<HomeVisit> already  = homeVisitRepository.findById(id);
+    if (already.isEmpty()) {
+        return "The home visit with that id does not exist";
+    }
+    HomeVisit visit = already.get();
+    VisitStatus current = visit.getStatus();
+
+    boolean accepted = false;
+    if (current == VisitStatus.REQUESTED) {
+        accepted = (newStatus == VisitStatus.ASSIGNED || newStatus == VisitStatus.DECLINED);
+    } else if (current == VisitStatus.ASSIGNED) {
+        accepted = (newStatus == VisitStatus.VISITED || newStatus == VisitStatus.DECLINED);
+    }
+
+    if (!accepted) {
+        return "Cannot change status from " + current + " to " + newStatus;
+    }
+
+    visit.setStatus(newStatus);
+    homeVisitRepository.save(visit);
+    return "Status changed successfully";
+    }
 
 }

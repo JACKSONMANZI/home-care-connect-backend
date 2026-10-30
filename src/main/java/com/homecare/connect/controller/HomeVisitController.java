@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -53,6 +54,19 @@ public class HomeVisitController {
     LocalDate startDate = LocalDate.parse(start);
     LocalDate endDate = LocalDate.parse(end);
     return ResponseEntity.status(HttpStatus.OK).body(homeVisitService.getBetweenDates(startDate, endDate));
+    }
+
+    @PatchMapping("/{id}/status")
+
+    public ResponseEntity<String> changeStatus(@PathVariable UUID id, @RequestParam VisitStatus status) {
+    String show = homeVisitService.changeStatus(id, status);
+    if (show.startsWith("Cannot change status")) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(show);
+    } else if (show.equals("The home visit with that id does not exist")) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(show);
+    } else {
+        return ResponseEntity.status(HttpStatus.OK).body(show);
+    }
     }
 
     @GetMapping("/{id}")
