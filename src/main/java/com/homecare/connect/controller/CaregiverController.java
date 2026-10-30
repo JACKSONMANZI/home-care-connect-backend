@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.homecare.connect.domain.Caregiver;
@@ -37,6 +38,12 @@ public class CaregiverController {
     public ResponseEntity<List<Caregiver>> getAllCaregivers() {
         return ResponseEntity.status(HttpStatus.OK).body(caregiverService.getAllCaregivers());
     }
+
+    @GetMapping("/by-care-skill")
+    
+    public ResponseEntity<List<Caregiver>> getByCareSkillName(@RequestParam String name) { 
+        return ResponseEntity.status(HttpStatus.OK).body(caregiverService.getByCareSkillName(name));
+}
 
     @GetMapping("/{id}")
 

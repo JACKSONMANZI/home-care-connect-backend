@@ -49,4 +49,7 @@ public class CaregiverService {
         caregiverRepository.deleteById(id);
         return "Caregiver deleted successfully";
     }
+    public List<Caregiver> getByCareSkillName(String name) {
+    return caregiverRepository.findByCareSkillName(name);
+}
 }
