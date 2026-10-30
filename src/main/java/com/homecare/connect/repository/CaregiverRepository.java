@@ -8,9 +8,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.homecare.connect.domain.Caregiver;
+import com.homecare.connect.domain.Zone;
 
 public interface CaregiverRepository extends JpaRepository<Caregiver,UUID>{
     
     @Query("SELECT c FROM Caregiver c JOIN c.careSkills s WHERE LOWER(s.name) LIKE LOWER(CONCAT('%', :name, '%'))")
     List<Caregiver> findByCareSkillName(@Param("name") String name);
+
+    boolean existsByZone(Zone zone);
 }

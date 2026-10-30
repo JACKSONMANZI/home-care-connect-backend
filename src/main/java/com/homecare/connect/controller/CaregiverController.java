@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -40,7 +41,7 @@ public class CaregiverController {
     }
 
     @GetMapping("/by-care-skill")
-    
+
     public ResponseEntity<List<Caregiver>> getByCareSkillName(@RequestParam String name) { 
         return ResponseEntity.status(HttpStatus.OK).body(caregiverService.getByCareSkillName(name));
 }
@@ -77,5 +78,17 @@ public class CaregiverController {
         } else {
             return ResponseEntity.status(HttpStatus.OK).body(show);
         }
+    }
+    @PatchMapping("/{caregiverId}/zone")
+
+    public ResponseEntity<String> changeCaregiverZone(@PathVariable UUID caregiverId, @RequestParam int zoneNumber) {
+    String display = caregiverService.changeCaregiverZone(caregiverId, zoneNumber);
+    if (display.equals("The caregiver with that id does not exist") || display.equals("The zone with that zoneNumber does not exist")) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(display);
+    } else if (display.equals("That zone is taken by another caregiver")) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(display);
+    } else {
+        return ResponseEntity.status(HttpStatus.OK).body(display);
+    }
     }
 }
