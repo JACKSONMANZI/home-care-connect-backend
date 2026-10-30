@@ -26,15 +26,23 @@ public class CareSkillController {
     private CareSkillService careSkillService;
 
     @PostMapping ("/save")
+
     public ResponseEntity<String> createCareSkill(@RequestBody CareSkill careSkill){
         String display = careSkillService.createCareSkill(careSkill);
         return ResponseEntity.status(HttpStatus.CREATED).body(display);
     }
     @GetMapping ("/all")
+
     public ResponseEntity<List<CareSkill>> getAllCareSkills(){
         return ResponseEntity.status(HttpStatus.OK).body(careSkillService.getAllCareSkills());
     }
+    @GetMapping("/unused")
+
+    public ResponseEntity<List<CareSkill>> getUnusedCareSkills() {  
+         return ResponseEntity.status(HttpStatus.OK).body(careSkillService.getUnusedCareSkills());
+}
     @GetMapping ("/{id}")
+
     public ResponseEntity<?> getByIdCareSkill(@PathVariable UUID id){
         Optional<CareSkill> careSkill = careSkillService.getByIdCareSkill(id);
         if(careSkill.isPresent()){
@@ -45,6 +53,7 @@ public class CareSkillController {
         }
     }
     @PutMapping ("/update/{id}")
+
     public ResponseEntity<String> updateCareSkill(@PathVariable UUID id,@RequestBody CareSkill careSkill){
         String display = careSkillService.updateCareSkill(id, careSkill);
         if (display.equals("The care skill with that id does not exist")) {
@@ -55,6 +64,7 @@ public class CareSkillController {
         }
     }
     @DeleteMapping ("/delete/{id}")
+    
     public  ResponseEntity<String> deleteCareSkill(@PathVariable UUID id){
         String display = careSkillService.deleteCareSkill(id);
         if (display.equals("The care skill with that id does not exist")) {

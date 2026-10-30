@@ -45,4 +45,7 @@ public class CareSkillService {
     careSkillRepository.deleteById(id);
     return "Care skill deleted successfully";
    }   
+   public List<CareSkill> getUnusedCareSkills() {
+    return careSkillRepository.findUnusedCareSkills();
+   }
 }
