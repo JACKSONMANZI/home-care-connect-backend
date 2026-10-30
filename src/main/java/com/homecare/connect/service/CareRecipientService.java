@@ -9,12 +9,15 @@ import org.springframework.stereotype.Service;
 
 import com.homecare.connect.domain.CareRecipient;
 import com.homecare.connect.repository.CareRecipientRepository;
+import com.homecare.connect.repository.CaregiverRepository;
 
 @Service 
 public class CareRecipientService {
     @Autowired 
     private CareRecipientRepository careRecipientRepository;
 
+    @Autowired 
+    private CaregiverRepository caregiverRepository;
     public String createCareRecipient(CareRecipient careRecipient) {
         careRecipientRepository.save(careRecipient);
         return "Care recipient saved successfully";
@@ -53,5 +56,11 @@ public class CareRecipientService {
     }
     public List<CareRecipient> getByLastName(String lastName) {
     return careRecipientRepository.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
+    }
+    public Optional<List<CareRecipient>> getCareRecipientsOfCaregiver(UUID caregiverId) {
+    if (!caregiverRepository.existsById(caregiverId)) {
+        return Optional.empty();
+    }
+    return Optional.of(careRecipientRepository.findCareRecipientsOfCaregiver(caregiverId));
 }
 }

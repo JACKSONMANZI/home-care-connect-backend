@@ -41,9 +41,21 @@ public class CareRecipientController {
 
         @GetMapping("/by-last-name")
     
-public ResponseEntity<List<CareRecipient>> getByLastName(@RequestParam String lastName) {
+    public ResponseEntity<List<CareRecipient>> getByLastName(@RequestParam String lastName) {
     return ResponseEntity.status(HttpStatus.OK).body(careRecipientService.getByLastName(lastName));
-}
+    }
+
+    @GetMapping("/of-caregiver/{caregiver}")
+
+    public ResponseEntity<?> getCareRecipientsOfCaregiver(@PathVariable UUID caregiver) {
+    Optional<List<CareRecipient>> output = careRecipientService.getCareRecipientsOfCaregiver(caregiver);
+    if (output.isPresent()) {
+        return ResponseEntity.status(HttpStatus.OK).body(output.get());
+    } else {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body("The caregiver with that id does not exist");
+    }
+    }
 
     @GetMapping("/{id}")
 
