@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.homecare.connect.domain.HomeVisit;
+import com.homecare.connect.domain.VisitStatus;
 import com.homecare.connect.repository.HomeVisitRepository;
 
 @Service 
@@ -52,4 +53,8 @@ public class HomeVisitService {
         homeVisitRepository.deleteById(id);
         return "Home visit deleted successfully";
     }
+
+    public List<HomeVisit> getByStatus(VisitStatus status) {
+    return homeVisitRepository.findByStatusOrderByVisitDateAsc(status);
+}
 }

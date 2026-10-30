@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.homecare.connect.domain.HomeVisit;
+import com.homecare.connect.domain.VisitStatus;
 import com.homecare.connect.service.HomeVisitService;
 
 @RestController 
@@ -36,6 +38,11 @@ public class HomeVisitController {
 
     public ResponseEntity<List<HomeVisit>> getAllHomeVisits() {
         return ResponseEntity.status(HttpStatus.OK).body(homeVisitService.getAllHomeVisits());
+    }
+
+    @GetMapping("/by-status")
+    public ResponseEntity<List<HomeVisit>> getByStatus(@RequestParam VisitStatus status) {
+    return ResponseEntity.status(HttpStatus.OK).body(homeVisitService.getByStatus(status));
     }
 
     @GetMapping("/{id}")
