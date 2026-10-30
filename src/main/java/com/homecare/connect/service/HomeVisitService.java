@@ -1,5 +1,6 @@
 package com.homecare.connect.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -57,4 +58,9 @@ public class HomeVisitService {
     public List<HomeVisit> getByStatus(VisitStatus status) {
     return homeVisitRepository.findByStatusOrderByVisitDateAsc(status);
 }
+
+public List<HomeVisit> getBetweenDates(LocalDate start, LocalDate end) {
+    return homeVisitRepository.findByVisitDateBetweenOrderByVisitDateAsc(start, end);
+}
+
 }

@@ -1,5 +1,6 @@
 package com.homecare.connect.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -41,11 +42,21 @@ public class HomeVisitController {
     }
 
     @GetMapping("/by-status")
+
     public ResponseEntity<List<HomeVisit>> getByStatus(@RequestParam VisitStatus status) {
     return ResponseEntity.status(HttpStatus.OK).body(homeVisitService.getByStatus(status));
     }
 
+    @GetMapping("/between")
+
+    public ResponseEntity<List<HomeVisit>> getBetweenDates(@RequestParam String start, @RequestParam String end) {
+    LocalDate startDate = LocalDate.parse(start);
+    LocalDate endDate = LocalDate.parse(end);
+    return ResponseEntity.status(HttpStatus.OK).body(homeVisitService.getBetweenDates(startDate, endDate));
+    }
+
     @GetMapping("/{id}")
+    
     public ResponseEntity<?> getByIdHomeVisit(@PathVariable UUID id) {
         Optional<HomeVisit> homeVisit = homeVisitService.getByIdHomeVisit(id);
         if (homeVisit.isPresent()) {
