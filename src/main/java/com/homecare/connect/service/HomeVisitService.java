@@ -10,12 +10,16 @@ import org.springframework.stereotype.Service;
 
 import com.homecare.connect.domain.HomeVisit;
 import com.homecare.connect.domain.VisitStatus;
+import com.homecare.connect.repository.CareNoteRepository;
 import com.homecare.connect.repository.HomeVisitRepository;
 
 @Service 
 public class HomeVisitService {
     @Autowired 
     private HomeVisitRepository homeVisitRepository;
+
+    @Autowired
+    private CareNoteRepository careNoteRepository;
 
      public String createHomeVisit(HomeVisit homeVisit) {
         homeVisitRepository.save(homeVisit);
@@ -46,13 +50,17 @@ public class HomeVisitService {
         return "Home visit updated successfully";
     }
 
-    public String deleteHomeVisit(UUID id) {
-        Optional<HomeVisit> allReady = homeVisitRepository.findById(id);
-        if (allReady.isEmpty()) {
-            return "The home visit with that id does not exist";
-        }
-        homeVisitRepository.deleteById(id);
-        return "Home visit deleted successfully";
+   public String deleteHomeVisit(UUID id) {
+    Optional<HomeVisit> already = homeVisitRepository.findById(id);
+    if (already.isEmpty()) {
+        return "The home visit with that id does not exist";
+    }
+    HomeVisit visit = already.get();
+    if (careNoteRepository.existsByHomeVisit(visit)) {
+        return "That home visit has care notes, delete them first";
+    }
+    homeVisitRepository.deleteById(id);
+    return "Home visit deleted successfully";
     }
 
     public List<HomeVisit> getByStatus(VisitStatus status) {

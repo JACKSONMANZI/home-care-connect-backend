@@ -92,14 +92,15 @@ public class HomeVisitController {
         }
     }
 
-    @DeleteMapping("/delete/{id}")
-
-    public ResponseEntity<String> deleteHomeVisit(@PathVariable UUID id) {
-        String show = homeVisitService.deleteHomeVisit(id);
-        if (show.equals("The home visit with that id does not exist")) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(show);
-        } else {
-            return ResponseEntity.status(HttpStatus.OK).body(show);
-        }
+   @DeleteMapping("/delete/{id}")
+   public ResponseEntity<String> deleteHomeVisit(@PathVariable UUID id) {
+    String show = homeVisitService.deleteHomeVisit(id);
+    if (show.equals("The home visit with that id does not exist")) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(show);
+    } else if (show.equals("That home visit has care notes, delete them first")) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(show);
+    } else {
+        return ResponseEntity.status(HttpStatus.OK).body(show);
     }
+   }
 }
