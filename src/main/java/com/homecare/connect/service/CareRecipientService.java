@@ -51,4 +51,7 @@ public class CareRecipientService {
         careRecipientRepository.deleteById(id);
         return "Care recipient deleted successfully";
     }
+    public List<CareRecipient> getByLastName(String lastName) {
+    return careRecipientRepository.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
+}
 }
