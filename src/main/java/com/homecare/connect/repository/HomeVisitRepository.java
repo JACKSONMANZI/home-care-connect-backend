@@ -19,4 +19,6 @@ public interface HomeVisitRepository extends JpaRepository<HomeVisit,UUID> {
     List<HomeVisit> findByVisitDateBetweenOrderByVisitDateAsc(LocalDate start,LocalDate end);
     @Query("SELECT hv.status, COUNT(hv) FROM HomeVisit hv GROUP BY hv.status")
     List<Object[]> countVisitsByStatus();
+    long countByVisitDate(LocalDate visitDate);
+    long countByStatus(VisitStatus status);
 }
