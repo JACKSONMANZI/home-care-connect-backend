@@ -56,6 +56,12 @@ public class HomeVisitController {
     return ResponseEntity.status(HttpStatus.OK).body(homeVisitService.getBetweenDates(startDate, endDate));
     }
 
+    @GetMapping("/stats/by-status")
+    
+    public ResponseEntity<List<Object[]>> getVisitsStatsByStatus() {
+    return ResponseEntity.status(HttpStatus.OK).body(homeVisitService.getVisitsStatsByStatus());
+    }
+
     @PatchMapping("/{id}/status")
 
     public ResponseEntity<String> changeStatus(@PathVariable UUID id, @RequestParam VisitStatus status) {

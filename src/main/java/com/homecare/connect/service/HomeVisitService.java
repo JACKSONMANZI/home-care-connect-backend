@@ -93,5 +93,8 @@ public class HomeVisitService {
     homeVisitRepository.save(visit);
     return "Status changed successfully";
     }
+    public List<Object[]> getVisitsStatsByStatus() {
+    return homeVisitRepository.countVisitsByStatus();
+    }
 
 }
