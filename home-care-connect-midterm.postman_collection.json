@@ -1,0 +1,1331 @@
+{
+  "info": {
+    "_postman_id": "1cdd7fd8-59c4-4602-98f6-ca0aa3aecf09",
+    "name": "Home Care Connect Midterm",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58398890"
+  },
+  "item": [
+    {
+      "name": "A2-CareSkill-Save",
+      "request": {
+        "auth": {
+          "type": "inherit"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"Elderly Care\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/care-skills/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-skills",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-CareSkill-All",
+      "request": {
+        "auth": {
+          "type": "inherit"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-skills/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-skills",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-CareSkill-ById",
+      "request": {
+        "auth": {
+          "type": "inherit"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-skills/a168bad7-0c54-4328-b33a-8ddede08888f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-skills",
+            "a168bad7-0c54-4328-b33a-8ddede08888f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-CareSkill-ById-404",
+      "request": {
+        "auth": {
+          "type": "inherit"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-skills/e168bad7-0c54-4328-b33a-8ddede08888f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-skills",
+            "e168bad7-0c54-4328-b33a-8ddede08888f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-CareSkill-Update",
+      "request": {
+        "auth": {
+          "type": "inherit"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"Elderly care updated\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/care-skills/update/a168bad7-0c54-4328-b33a-8ddede08888f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-skills",
+            "update",
+            "a168bad7-0c54-4328-b33a-8ddede08888f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-CareSkill-Delete",
+      "request": {
+        "auth": {
+          "type": "inherit"
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-skills/delete/a168bad7-0c54-4328-b33a-8ddede08888f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-skills",
+            "delete",
+            "a168bad7-0c54-4328-b33a-8ddede08888f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-CareSkill-Delete-404",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-skills/delete/a168bad7-0c54-4328-b33a-8ddede08888f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-skills",
+            "delete",
+            "a168bad7-0c54-4328-b33a-8ddede08888f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Zone-Save",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"zoneNumber\": 4, \"name\": \"Kicukiro-Rural\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/zones/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "zones",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Zone-All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/zones/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "zones",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Zone-ById",
+      "request": {
+        "auth": {
+          "type": "inherit"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/zones/c93c7a26-c960-4dc1-af35-b8855a9f1264",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "zones",
+            "c93c7a26-c960-4dc1-af35-b8855a9f1264"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Zone-ById-404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/zones/c93c7a26-c960-4dc1-af35-b8855a9f1265",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "zones",
+            "c93c7a26-c960-4dc1-af35-b8855a9f1265"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Zone-Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"zoneNumber\":2,\r\n\"name\":\"Gasabo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/zones/update/c93c7a26-c960-4dc1-af35-b8855a9f1264",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "zones",
+            "update",
+            "c93c7a26-c960-4dc1-af35-b8855a9f1264"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Zone-Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/zones/delete/c93c7a26-c960-4dc1-af35-b8855a9f1264",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "zones",
+            "delete",
+            "c93c7a26-c960-4dc1-af35-b8855a9f1264"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Zone-Delete-404",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/zones/delete/c93c7a26-c960-4dc1-af35-b8855a9f1264",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "zones",
+            "delete",
+            "c93c7a26-c960-4dc1-af35-b8855a9f1264"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Caregiver-Save",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Chantal\",\r\n  \"lastName\": \"Mukamana\",\r\n  \"phone\": \"0788111003\",\r\n  \"zone\": { \"id\": \"dbbe3139-7636-4417-b914-3b511c91f111\" },\r\n  \"careSkills\": [\r\n    { \"id\": \"410467e2-981f-42ee-82d3-01fa067cf66d\" }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/caregivers/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "caregivers",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Caregiver-All",
+      "request": {
+        "auth": {
+          "type": "inherit"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/caregivers/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "caregivers",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Caregiver-ById",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/caregivers/e9b6d9c0-a7af-4e2b-b28e-5834c9526df0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "caregivers",
+            "e9b6d9c0-a7af-4e2b-b28e-5834c9526df0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Caregiver-ById-404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/caregivers/e9b6d9c0-a7af-4e2b-b28e-5834c9526df1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "caregivers",
+            "e9b6d9c0-a7af-4e2b-b28e-5834c9526df1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Caregiver-Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Uwase-Updated\",\r\n  \"phone\": \"0788999999\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/caregivers/update/48597b00-efc4-4385-9a58-243927749d7a",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "caregivers",
+            "update",
+            "48597b00-efc4-4385-9a58-243927749d7a"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Caregiver-Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/caregivers/delete/e9b6d9c0-a7af-4e2b-b28e-5834c9526df0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "caregivers",
+            "delete",
+            "e9b6d9c0-a7af-4e2b-b28e-5834c9526df0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Caregiver-Delete-404",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/caregivers/delete/e9b6d9c0-a7af-4e2b-b28e-5834c9526df0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "caregivers",
+            "delete",
+            "e9b6d9c0-a7af-4e2b-b28e-5834c9526df0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-CareRecipient-Save",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Patrick\",\r\n  \"lastName\": \"Nkurunziza\",\r\n  \"nationalId\": \"1195070044444444\",\r\n  \"phone\": \"0788222005\",\r\n  \"address\": \"Kigali, Gasabo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/care-recipients/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-recipients",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-CareRecipient-All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-recipients/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-recipients",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-CareRecipient-ById",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-recipients/82c42c96-f30d-4b9f-8759-af347dcb4be4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-recipients",
+            "82c42c96-f30d-4b9f-8759-af347dcb4be4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-CareRecipient-ById-404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-recipients/00000000-0000-0000-0000-000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-recipients",
+            "00000000-0000-0000-0000-000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-CareRecipient-Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Emmanuel\",\r\n  \"lastName\": \"Habimana-Updated\",\r\n  \"nationalId\": \"1195070099999999\",\r\n  \"phone\": \"0788222222\",\r\n  \"address\": \"Kigali, Kicukiro\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/care-recipients/update/82c42c96-f30d-4b9f-8759-af347dcb4be4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-recipients",
+            "update",
+            "82c42c96-f30d-4b9f-8759-af347dcb4be4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-CareRecipient-Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-recipients/delete/82c42c96-f30d-4b9f-8759-af347dcb4be4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-recipients",
+            "delete",
+            "82c42c96-f30d-4b9f-8759-af347dcb4be4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-CareRecipient-Delete-404",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-recipients/delete/00000000-0000-0000-0000-000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-recipients",
+            "delete",
+            "00000000-0000-0000-0000-000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-HomeVisit-Save",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"visitDate\": \"2026-11-25\",\r\n  \"status\": \"DECLINED\",\r\n  \"careType\": \"Post-surgery Care\",\r\n  \"hours\": 4,\r\n  \"careRecipient\": { \"id\": \"070d8337-4e1c-4c6f-807b-d2fde558a0a9\" },\r\n  \"caregiver\": { \"id\": \"db4cc2c1-1797-4509-ac33-4c97807a3f5f\" }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/home-visits/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "home-visits",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-HomeVisit-All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/home-visits/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "home-visits",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-HomeVisit-ById",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/home-visits/99aa331b-baa4-48d5-8cf2-4cac10ec90b6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "home-visits",
+            "99aa331b-baa4-48d5-8cf2-4cac10ec90b6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-HomeVisit-ById-404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/home-visits/00000000-0000-0000-0000-000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "home-visits",
+            "00000000-0000-0000-0000-000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-HomeVisit-Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"visitDate\": \"2026-10-25\",\r\n  \"status\": \"ASSIGNED\",\r\n  \"careType\": \"Physiotherapy\",\r\n  \"hours\": 4,\r\n  \"careRecipient\": { \"id\": \"a26c2900-1f44-4407-9d40-77110d61c534\" },\r\n  \"caregiver\": { \"id\": \"e403bbab-1983-42cf-8d43-f9743f578124\" }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/home-visits/update/99aa331b-baa4-48d5-8cf2-4cac10ec90b6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "home-visits",
+            "update",
+            "99aa331b-baa4-48d5-8cf2-4cac10ec90b6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-HomeVisit-Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/home-visits/delete/99aa331b-baa4-48d5-8cf2-4cac10ec90b6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "home-visits",
+            "delete",
+            "99aa331b-baa4-48d5-8cf2-4cac10ec90b6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-HomeVisit-Delete-404",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/home-visits/delete/00000000-0000-0000-0000-000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "home-visits",
+            "delete",
+            "00000000-0000-0000-0000-000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B1-ByLastName",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-recipients/by-last-name?lastName=manzi",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-recipients",
+            "by-last-name"
+          ],
+          "query": [
+            {
+              "key": "lastName",
+              "value": "manzi"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B2-ByStatus",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/home-visits/by-status?status=REQUESTED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "home-visits",
+            "by-status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "REQUESTED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B3-BetweenDates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/home-visits/between?start=2026-10-01&end=2026-10-31",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "home-visits",
+            "between"
+          ],
+          "query": [
+            {
+              "key": "start",
+              "value": "2026-10-01"
+            },
+            {
+              "key": "end",
+              "value": "2026-10-31"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C1-ByCareSkill",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/caregivers/by-care-skill?name=elder",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "caregivers",
+            "by-care-skill"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "elder"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C2-FreeZones",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/zones/free",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "zones",
+            "free"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C3-UnusedSkills",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-skills/unused",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-skills",
+            "unused"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C4-OfCaregiver",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-recipients/of-caregiver/4a4be201-7cf8-4cd0-932f-5deb6d2d2ecc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-recipients",
+            "of-caregiver",
+            "4a4be201-7cf8-4cd0-932f-5deb6d2d2ecc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D1-ChangeStatus",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/home-visits/22a631c2-803d-4c00-aee1-33acb8adba45/status?status=ASSIGNED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "home-visits",
+            "22a631c2-803d-4c00-aee1-33acb8adba45",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "ASSIGNED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D1-ChangeStatus-400",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/home-visits/d4e3c81f-3044-4e25-9ca5-b284a66a3c7b/status?status=VISITED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "home-visits",
+            "d4e3c81f-3044-4e25-9ca5-b284a66a3c7b",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "VISITED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D2-ChangeStatus",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/home-visits/b2d97917-298c-4ffd-aa1e-6adacb7fbefa/status?status=VISITED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "home-visits",
+            "b2d97917-298c-4ffd-aa1e-6adacb7fbefa",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "VISITED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D2-ChangeStatus-400",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/home-visits/32cd0047-8baf-4918-a9b7-e45bcd821e6f/status?status=REQUESTED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "home-visits",
+            "32cd0047-8baf-4918-a9b7-e45bcd821e6f",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "REQUESTED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3-Visited-400",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/home-visits/b27daaa2-6411-437b-93a0-739d0101dbbb/status?status=ASSIGNED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "home-visits",
+            "b27daaa2-6411-437b-93a0-739d0101dbbb",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "ASSIGNED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3-Declined",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D4-ChangeCaregiverZone",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/caregivers/5aaaa7ba-94c5-4efb-b611-f08e661a31f2/zone?zoneNumber=4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "caregivers",
+            "5aaaa7ba-94c5-4efb-b611-f08e661a31f2",
+            "zone"
+          ],
+          "query": [
+            {
+              "key": "zoneNumber",
+              "value": "4"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E1-SaveCareNote",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"activityName\": \"Medication reminder\",\r\n  \"observations\": \"Blood pressure normal\",\r\n  \"durationMinutes\": 30\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/care-notes/save?homeVisitId=b27daaa2-6411-437b-93a0-739d0101dbbb",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-notes",
+            "save"
+          ],
+          "query": [
+            {
+              "key": "homeVisitId",
+              "value": "b27daaa2-6411-437b-93a0-739d0101dbbb"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E2-CareNotesHistory",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-notes/care-recipient/1195070023456789",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-notes",
+            "care-recipient",
+            "1195070023456789"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E3-DeleteCareNote",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/care-notes/delete/eff3b2a9-ee13-4346-9135-f00607825eae",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "care-notes",
+            "delete",
+            "eff3b2a9-ee13-4346-9135-f00607825eae"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "F1-StatsByStatus",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bonus-DashBoard",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ]
+}
